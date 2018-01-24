@@ -174,7 +174,7 @@ default         0;
     #Generating Random Password for stratum
     blckntifypass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
     cd ~
-    git clone https://github.com/tpruvot/yiimp.git
+    git clone https://github.com/InfinexOfficial/yiimp.git
     cd $HOME/yiimp/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     sudo make
@@ -351,7 +351,7 @@ echo 'include /etc/nginx/blockuseragents.rules;
             error_log  /var/log/nginx/'"${server_name}"'.app-error.log error;
         
             # allow larger file uploads and longer script runtimes
- 	client_body_buffer_size  50k;
+ 	    client_body_buffer_size  50k;
         client_header_buffer_size 50k;
         client_max_body_size 50k;
         large_client_header_buffers 2 50k;
@@ -510,7 +510,8 @@ define('"'"'EXCH_YOBIT_SECRET'"'"', '"'"''"'"');
      sudo mysql --defaults-group-suffix=host1 --force < 2017-09-notifications.sql
      sudo mysql --defaults-group-suffix=host1 --force < 2017-10-bookmarks.sql
      sudo mysql --defaults-group-suffix=host1 --force < 2017-11-segwit.sql
-     sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
+     sudo mysql --defaults-group-suffix=host1 --force < 2018-01-founderreward.sql
+     sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql     
      
     clear
     output "Generating a basic serverconfig.php"
